@@ -19,7 +19,8 @@ import javax.xml.ws.Response;
 import java.util.Base64;
 import java.util.UUID;
 
-
+// Mapping auth/login endpoint
+@RestController
 @RequestMapping("/")
 public class AuthenticationController {
     @Autowired
@@ -40,6 +41,8 @@ public class AuthenticationController {
                 .lastLoginTime(user.getLastLoginAt()).role(user.getRole());
         HttpHeaders headers = new HttpHeaders();
         headers.add("access-token", userAuthToken.getAccessToken());
-        return null;
+
+        // Returning user data, access token with 200 status code
+        return new ResponseEntity<AuthorizedUserResponse>(authorizedUserResponse, headers, HttpStatus.OK);
     }
 }

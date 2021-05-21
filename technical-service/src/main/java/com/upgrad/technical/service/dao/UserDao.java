@@ -25,13 +25,23 @@ public class UserDao {
     }
 
     public UserEntity getUserByEmail(final String email) {
-        return null;
+        // Fetching user with email
+        try {
+            return entityManager.createNamedQuery("userByEmail",UserEntity.class).setParameter("email",email).getSingleResult();
+        }
+        catch(NoResultException nre){
+            return null;
+        }
+
     }
 
+    // Filling userAuthToken on table
     public UserAuthTokenEntity createAuthToken(final UserAuthTokenEntity userAuthTokenEntity) {
-        entityManager.persist(userAuthTokenEntity); return null;
+        entityManager.persist(userAuthTokenEntity);
+        return userAuthTokenEntity;
     }
 
+        // updating users last login
     public void updateUser(final UserEntity updatedUserEntity) {
         entityManager.merge(updatedUserEntity);
     }

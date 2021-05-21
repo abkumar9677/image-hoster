@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
+import com.upgrad.technical.service.business.JwtTokenProvider;
 import java.time.ZonedDateTime;
 
 @Service
@@ -26,7 +26,25 @@ public class AuthenticationService {
         UserEntity userEntity = userDao.getUserByEmail(username);
 
         final String encryptedPassword = CryptographyProvider.encrypt(password, userEntity.getSalt());
-        return null;
+
+        // Checking password encryption match
+        if(!encryptedPassword.equals(userEntity.getPassword())){
+            return null;
+        }
+        UserAuthTokenEntity userAuthTokenEntity = new UserAuthTokenEntity();
+        userAuthTokenEntity.setUser(userEntity);
+        JwtTokenProvider jwtTokenProvider = new JwtTokenProvider(encryptedPassword);
+        final ZonedDateTime now = ZonedDateTime.now();
+        ZonedDateTime expiresat = now.plusHours(8);
+        userAuthTokenEntity.setLoginAt(now);
+        userAuthTokenEntity.setExpiresAt(expiresat);
+        userAuthTokenEntity.setAccessToken(jwtTokenProvider.generateToken(userEntity.getUuid(),now,expiresat));
+        userEntity.setLastLoginAt(now);
+        userDao.updateUser(userEntity);
+        userDao.createAuthToken(userAuthTokenEntity);
+
+        // Returning userAuthToken
+        return userAuthTokenEntity;
     }
 }
 
