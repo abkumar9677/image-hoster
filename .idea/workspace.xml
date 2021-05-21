@@ -9,12 +9,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0ed3f177-2b00-4cd4-a89a-4631b572d221" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/controller/SignupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/controller/SignupController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/exception/RestExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/exception/RestExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/controller/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/controller/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/exception/RestExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/exception/RestExceptionHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/business/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/business/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/AuthenticationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/SignupBusinessService.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/SignupBusinessService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/dao/UserDao.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +198,7 @@
       <workItem from="1621573196960" duration="45000" />
       <workItem from="1621575872359" duration="300000" />
       <workItem from="1621576787919" duration="1527000" />
-      <workItem from="1621607265816" duration="4921000" />
+      <workItem from="1621607265816" duration="5854000" />
     </task>
     <servers />
   </component>

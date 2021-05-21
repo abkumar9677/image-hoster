@@ -24,12 +24,16 @@ public class AuthenticationService {
     @Transactional(propagation = Propagation.REQUIRED)
     public UserAuthTokenEntity authenticate(final String username, final String password) throws AuthenticationFailedException {
         UserEntity userEntity = userDao.getUserByEmail(username);
-
+        if(userEntity == null){
+            // Handling wrong email exception
+            throw new AuthenticationFailedException("ATH-001","User with email not found");
+        }
         final String encryptedPassword = CryptographyProvider.encrypt(password, userEntity.getSalt());
 
         // Checking password encryption match
         if(!encryptedPassword.equals(userEntity.getPassword())){
-            return null;
+            // Handling wrong password exception
+            throw new AuthenticationFailedException("ATH-002","Password failed");
         }
         UserAuthTokenEntity userAuthTokenEntity = new UserAuthTokenEntity();
         userAuthTokenEntity.setUser(userEntity);
