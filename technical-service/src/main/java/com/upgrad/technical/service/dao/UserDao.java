@@ -17,8 +17,11 @@ public class UserDao {
     @PersistenceContext
     private EntityManager entityManager;
 
+    // Filling entry on database
     public UserEntity createUser(UserEntity userEntity) {
-        entityManager.persist(userEntity); return null;
+
+        entityManager.persist(userEntity);
+        return userEntity;
     }
 
     public UserEntity getUserByEmail(final String email) {

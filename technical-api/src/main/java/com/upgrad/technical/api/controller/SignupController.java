@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
+// Mapping userSign Up endpoint
+@RestController
 @RequestMapping("/")
 public class SignupController {
 
@@ -34,9 +36,11 @@ public class SignupController {
         userEntity.setMobilePhone(signupUserRequest.getMobileNumber());
         userEntity.setSalt("1234abc");
         userEntity.setRole("nonadmin");
-
+        // Calling business logic for userSign up
         final UserEntity createdUserEntity = signupBusinessService.signup(userEntity);
         SignupUserResponse userResponse = new SignupUserResponse().id(createdUserEntity.getUuid()).status("USER SUCCESSFULLY REGISTERED");
-        return null;
+
+        // Returning Response status code 201 for registering user and id
+        return new ResponseEntity<SignupUserResponse>(userResponse,HttpStatus.CREATED);
     }
 }
