@@ -26,12 +26,20 @@ public class AdminService {
     public ImageEntity getImage(final String imageUuid, final String authorization) throws ImageNotFoundException, UnauthorizedException, UserNotSignedInException {
 
         UserAuthTokenEntity userAuthTokenEntity = imageDao.getUserAuthToken(authorization);
-
+        if(userAuthTokenEntity==null){
+            // Handling not signed in exception
+            throw new UserNotSignedInException("USR-001","You are not Signed in,sign in first to get the details of the image");
+        }
         String role = userAuthTokenEntity.getUser().getRole();
         if(!role.equals("admin")){
-            return null;
+            // Handling Unauthorized exception
+            throw new UnauthorizedException("ATH-001","UNAUTHORIZED Access, Entered user is not an admin");
         }
         ImageEntity imageEntity= imageDao.getImage(imageUuid);
+        if(imageEntity==null){
+            // Handling Image not found exception
+            throw new ImageNotFoundException("IMG-001","Image with Uuid not found");
+        }
         // Returning image details
         return imageEntity;
     }

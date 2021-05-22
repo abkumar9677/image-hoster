@@ -30,28 +30,31 @@ public class RestExceptionHandler {
 
     }
 
+        // Image not found exception
     @ExceptionHandler(ImageNotFoundException.class)
     public ResponseEntity<ErrorResponse> imagenotfoundException(ImageNotFoundException exc, WebRequest request) {
-//        return new ResponseEntity<ErrorResponse>(
-//                new ErrorResponse().code(exc.getCode()).message(exc.getErrorMessage()), HttpStatus.NOT_FOUND
-//        );
-        return null;
+        return new ResponseEntity<ErrorResponse>(
+                new ErrorResponse().code(exc.getCode()).message(exc.getErrorMessage()), HttpStatus.NOT_FOUND
+        );
+
     }
 
+        // User not signed in exception
     @ExceptionHandler(UserNotSignedInException.class)
     public ResponseEntity<ErrorResponse> usernotsignedinException(UserNotSignedInException exc, WebRequest request) {
-//        return new ResponseEntity<ErrorResponse>(
-//                new ErrorResponse().code(exc.getCode()).message(exc.getErrorMessage()), HttpStatus.UNAUTHORIZED
-//        );
-        return null;
+        return new ResponseEntity<ErrorResponse>(
+                new ErrorResponse().code(exc.getCode()).message(exc.getErrorMessage()), HttpStatus.UNAUTHORIZED
+        );
+
     }
 
+        // Unauthorized exception
     @ExceptionHandler(UnauthorizedException.class)
     public ResponseEntity<ErrorResponse> unauthorizedException(UnauthorizedException exc, WebRequest request) {
-//        return new ResponseEntity<ErrorResponse>(
-//                new ErrorResponse().code(exc.getCode()).message(exc.getErrorMessage()), HttpStatus.FORBIDDEN
-//        );
-        return null;
+        return new ResponseEntity<ErrorResponse>(
+                new ErrorResponse().code(exc.getCode()).message(exc.getErrorMessage()), HttpStatus.FORBIDDEN
+        );
+
     }
 
 }
