@@ -15,6 +15,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+// Mapping admin endpoint
+@RestController
 @RequestMapping("/")
 public class AdminController {
 
@@ -28,7 +30,8 @@ public class AdminController {
         final ImageEntity imageEntity = adminService.getImage(imageUuid, authorization);
 
         ImageDetailsResponse imageDetailsResponse = new ImageDetailsResponse().image(imageEntity.getImage()).id((int) imageEntity.getId()).name(imageEntity.getName()).description(imageEntity.getDescription()).status(imageEntity.getStatus());
-        return null;
+        // Returning image details with HTTPStatus code: 200
+        return new ResponseEntity<ImageDetailsResponse>(imageDetailsResponse,HttpStatus.OK);
     }
 
 

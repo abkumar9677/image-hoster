@@ -27,7 +27,13 @@ public class AdminService {
 
         UserAuthTokenEntity userAuthTokenEntity = imageDao.getUserAuthToken(authorization);
 
-        String role = userAuthTokenEntity.getUser().getRole(); return null;
+        String role = userAuthTokenEntity.getUser().getRole();
+        if(!role.equals("admin")){
+            return null;
+        }
+        ImageEntity imageEntity= imageDao.getImage(imageUuid);
+        // Returning image details
+        return imageEntity;
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
