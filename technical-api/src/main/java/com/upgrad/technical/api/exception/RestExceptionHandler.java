@@ -21,12 +21,13 @@ public class RestExceptionHandler {
 
     }
 
+    // Handling image upload failed exception
     @ExceptionHandler(UploadFailedException.class)
     public ResponseEntity<ErrorResponse> uploadFailedException(UploadFailedException exc, WebRequest request) {
-//        return new ResponseEntity<ErrorResponse>(
-//                new ErrorResponse().code(exc.getCode()).message(exc.getErrorMessage()), HttpStatus.UNAUTHORIZED
-//        );
-        return null;
+        return new ResponseEntity<ErrorResponse>(
+                new ErrorResponse().code(exc.getCode()).message(exc.getErrorMessage()), HttpStatus.UNAUTHORIZED
+        );
+
     }
 
     @ExceptionHandler(ImageNotFoundException.class)
