@@ -23,6 +23,7 @@ import java.io.UnsupportedEncodingException;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
+// Mapping imageupload endpoint
 @RestController
 @RequestMapping("/")
 public class ImageUploadController {
@@ -44,6 +45,7 @@ public class ImageUploadController {
 
         final ImageEntity createdimageEntity = imageUploadService.upload(imageEntity, authorization);
         ImageUploadResponse imageUploadResponse = new ImageUploadResponse().id(createdimageEntity.getUuid()).status("IMAGE SUCCESSFULLY REGISTERED");
-        return null;
+        // returning imageUUID and status with 201 HTTPStatus code.
+        return new ResponseEntity<ImageUploadResponse>(imageUploadResponse,HttpStatus.CREATED);
     }
 }

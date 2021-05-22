@@ -9,12 +9,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0ed3f177-2b00-4cd4-a89a-4631b572d221" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/exception/RestExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/exception/RestExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/controller/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/controller/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/controller/ImageUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/src/main/java/com/upgrad/technical/api/controller/ImageUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/controller/ImageUploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/controller/ImageUploadController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/exception/RestExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-api/target/classes/com/upgrad/technical/api/exception/RestExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/business/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/business/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/business/ImageUploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/business/ImageUploadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/dao/ImageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/src/main/java/com/upgrad/technical/service/dao/ImageDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/AuthenticationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/ImageUploadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/business/ImageUploadService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/dao/ImageDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/technical-service/target/classes/com/upgrad/technical/service/dao/ImageDao.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +200,9 @@
       <workItem from="1621573196960" duration="45000" />
       <workItem from="1621575872359" duration="300000" />
       <workItem from="1621576787919" duration="1527000" />
-      <workItem from="1621607265816" duration="5854000" />
+      <workItem from="1621607265816" duration="6442000" />
+      <workItem from="1621666732167" duration="677000" />
+      <workItem from="1621670090892" duration="2751000" />
     </task>
     <servers />
   </component>

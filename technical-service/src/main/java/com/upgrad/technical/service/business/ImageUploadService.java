@@ -21,11 +21,13 @@ public class ImageUploadService {
     @Autowired
     private ImageDao imageDao;
 
+
     @Transactional(propagation = Propagation.REQUIRED)
     public ImageEntity upload(ImageEntity imageEntity, final String authorizationToken) throws UploadFailedException {
         UserAuthTokenEntity userAuthTokenEntity = imageDao.getUserAuthToken(authorizationToken);
 
         imageEntity.setUser_id(userAuthTokenEntity.getUser());
-        return null;
+    // Returning image details
+        return imageDao.createImage(imageEntity);
     }
 }

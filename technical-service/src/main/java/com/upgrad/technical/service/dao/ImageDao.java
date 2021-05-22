@@ -14,13 +14,20 @@ public class ImageDao {
     @PersistenceContext
     private EntityManager entityManager;
 
+    // Feeding image
     public ImageEntity createImage(ImageEntity imageEntity) {
         entityManager.persist(imageEntity);
-        return null;
+        return imageEntity;
     }
 
+    // Getting user details for given access token from table user auth token
     public UserAuthTokenEntity getUserAuthToken(final String accesstoken) {
-        return  null;
+        try{
+            return entityManager.createNamedQuery("userAuthTokenByAccessToken",UserAuthTokenEntity.class).setParameter("accessToken",accesstoken).getSingleResult();
+        }
+        catch (NoResultException nre){
+            return null;
+        }
     }
 
     public ImageEntity getImage(final String imageUuid) {
